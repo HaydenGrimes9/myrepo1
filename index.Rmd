@@ -1,18 +1,21 @@
 ---
-title: "Website"
-description: |
-  Welcome to the website. I hope you enjoy it!
-site: distill::distill_website
+title: "Hayden Grimes"
+image: "Headshot.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/hayden-grimes-96bb36176/"
+  - label: Twitter
+    url: "https://twitter.com/"
+  - label: GitHub
+    url: "https://github.com/HaydenGrimes9"
+  - label: Email
+    url: "mailto: haydengrimes9@gmail.com"
+output:
+  postcards::jolla
 ---
+ 
+Hey, I am Hayden! I come from a family of 6 and currently reside in Madison, Mississippi. My hobbies include sports, hanging out with friends, and going to concerts.
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+I am currently getting my Master's in Accounting at Mississippi State University. I also am studying for the CPA. Once I have completed my master's I am going to work for Ernst & Young in Memphis.
 
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
-# Learn more about publishing to GitHub Pages at:
-# https://rstudio.github.io/distill/publish_website.html#github-pages
-
-```
 

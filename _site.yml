@@ -6,7 +6,7 @@ output_dir: "docs"
 navbar:
   right:
     - text: "Home"
-      href: Hayden.html
+      href: index.html
     - text: "Resume"
       href: ACC8143-0906-jg2135-Resume.knit.html
     - text: "Hayden"
