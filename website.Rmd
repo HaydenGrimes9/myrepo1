@@ -1,0 +1,42 @@
+---
+title: "Website"
+author: "Hayden Grimes"
+date: "12/9/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(usethis)
+use_git_config(user.name = "HaydenGrimes9", user.email = "haydengrimes9@gmail.com")
+```
+
+```{r}
+install.packages(c("distill", "rmarkdown", "postcards"))
+```
+
+```{r}
+packageVersion("distill")
+packageVersion("rmarkdown")
+packageVersion("postcard")
+```
+```{r}
+install.packages("postcards")
+```
+```{r}
+packageVersion("distill")
+packageVersion("rmarkdown")
+packageVersion("postcards")
+```
+```{r}
+library(distill)
+```
+
+```{r}
+library(postcards)
+
+create_postcard(file = "Hayden.Rmd")
+```
+

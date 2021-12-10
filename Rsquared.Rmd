@@ -1,0 +1,19 @@
+---
+title: "Rsquared"
+description: |
+ This is where we discuss Rsquared
+author:
+  - name: Hayden Grimes
+    
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Dr. Hunt Rsquared lecture notes
+
+
+
