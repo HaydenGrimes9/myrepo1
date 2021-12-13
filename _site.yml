@@ -10,6 +10,6 @@ navbar:
     - text: "Resume"
       href: ACC8143-0906-jg2135-Resume.knit.html
     - text: "Rsquared is bad??"
-      href: RSquared= no bueno.html
+      href: RSquared.html
       
 output: distill::distill_article
