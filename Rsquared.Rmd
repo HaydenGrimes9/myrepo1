@@ -11,7 +11,7 @@ output: distill::distill_article
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-#### R-Squared has a range of values from 0 to 1. The model is doing a "good job" describing the variation in our data if the R-Squared is near 1. If the number is lower, our model can only account for a smaller portion of the data. When you run summary statistics, most applications will offer you R-Squared as an output because it is considered to be a good measurement. One might think of this as a good measurement, however sit is argued that it does not accurately measure the goodness of fit of a model.####
+### R-Squared has a range of values from 0 to 1. The model is doing a "good job" describing the variation in our data if the R-Squared is near 1. If the number is lower, our model can only account for a smaller portion of the data. When you run summary statistics, most applications will offer you R-Squared as an output because it is considered to be a good measurement. One might think of this as a good measurement, however sit is argued that it does not accurately measure the goodness of fit of a model.###
 
 
 ---
