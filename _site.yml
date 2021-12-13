@@ -9,9 +9,7 @@ navbar:
       href: index.html
     - text: "Resume"
       href: ACC8143-0906-jg2135-Resume.knit.html
-    - text: "Hayden"
-      href: hayden.html
-    - text: Rsquared
-      href: throw-away.html
+    - text: "Rsquared is bad??"
+      href: RSquared= nobueno.html
       
 output: distill::distill_article
