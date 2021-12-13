@@ -4,8 +4,6 @@ image: "Headshot.jpg"
 links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/hayden-grimes-96bb36176/"
-  - label: Twitter
-    url: "https://twitter.com/"
   - label: GitHub
     url: "https://github.com/HaydenGrimes9"
   - label: Email
