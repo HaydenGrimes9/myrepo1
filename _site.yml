@@ -10,7 +10,7 @@ navbar:
     - text: "Resume"
       href: ACC8143-0906-jg2135-Resume.knit.html
     - text: "Rsquared"
-      href: RSquared.html
+      href: Rsquared.html
     - text: "Linear Regression"
       href: LinearRegression.html
       
