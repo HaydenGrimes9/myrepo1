@@ -11,5 +11,7 @@ navbar:
       href: ACC8143-0906-jg2135-Resume.knit.html
     - text: "Rsquared"
       href: RSquared.html
+    - text: "Linear Regression"
+      href: LinearRegression.html
       
 output: distill::distill_article
