@@ -1,0 +1,147 @@
+---
+title: "Final Project Tab"
+description: |
+  Data Set: Abalone 
+author:
+  - name: Hayden Grimes
+    
+
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+### The data I used is the Abalone data set from Kaggle. The data set describes abalones, which are marine animals similar to a clam.
+
+### I used KNN. The KNN method is a basic supervised machine learning technique that may be used to handle classification and regression issues. It's simple to set up and comprehend, but it has the problem of being noticeably slower as the amount of data in use rises.###
+
+### KNN works by calculating the distances between a query and all of the data's examples, picking the K closest instances to the query, and then voting for the most frequent label. ###
+
+
+```{r}
+library(caret)
+library(ggplot2)
+library(tidyverse)
+library(readxl)
+library(psych)
+library(knitr)
+
+```
+```{r knn setup, echo=TRUE,warning=FALSE,message=FALSE}
+library(caret)
+library(tidyverse)
+```
+```{r}
+library(readr)
+abalone <- read_csv("abalone.csv")
+View(abalone)
+
+```
+```{r,echo=TRUE}
+list(abalone)
+```
+
+```{r}
+   # Create a column name from abalone.txt to get a description of each record value
+    colnames(abalone) <- c('Sex', 'Length', 'Diameter', 'Height', 'WholeWeight', 'ShuckedWeight',
+                           'VisceraWeight', 'ShellWeight', 'Rings')
+
+```
+# Get a summary of data 
+```{r}
+ summary(abalone)
+```
+# Get type of data
+```{r}
+  sapply(abalone, class)
+```
+```{r}
+library(caret)
+library(tidyverse)
+set.seed(1)
+
+abalone<-read.csv(file='abalone.csv')
+
+
+indxTrain <- createDataPartition(y = abalone[, names(abalone) == "Whole.weight"], p = 0.7, list = F)
+```
+
+```{r}
+train <- abalone[indxTrain,]
+train1<-train%>%
+  filter(Sex=="F")%>% 
+  sample_n(10)
+train2<-train%>%
+  filter(Sex=="M")%>% 
+  sample_n(10)
+train3<-train%>%
+  filter(Sex=="I")%>% 
+  sample_n(10)
+graph_train<-rbind(train1,train2,train3)
+test <- abalone[-indxTrain,]
+graph_test<-test%>%
+  sample_n(1)
+ggplot(data=graph_train,mapping = aes(x=Shucked.weight,y=Shell.weight,color=Sex))+geom_point(alpha=0.5) + 
+   geom_point(data=graph_test, color="darkred", size=4) + theme(legend.title = element_blank())+ggtitle("Which are the closest 5 to the red dot?")+xlim(0,1)+ylim(0,.5)+
+  theme(plot.title = element_text(hjust=0.5, size=10, face='bold'))
+```
+```{r}
+knnModel <- train(Sex ~.,
+                  data = graph_train,
+                  method = 'knn',
+                  preProcess = c("center","scale"),
+                  tuneGrid=data.frame(k=5))
+predictedclass<-predict(knnModel,graph_test)
+predictedclass
+knnModel$finalModel
+```
+
+# Plotting Age Linear Models
+According to correlation results, there is more correlation between Shell.weight and Rings than Rings and Length.
+
+```{r}
+qplot(Length, Rings, data=abalone, color=Sex) + geom_point() + geom_smooth(method="lm")
+```
+  
+```{r}
+qplot(Shell.weight, Rings, data=abalone, color=Sex) + geom_point() + geom_smooth(method="lm")
+```
+
+
+### Based off this, one should use the shell weight of the abalone to predict it age (how many rings) rather than the length ###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+    
+
+
