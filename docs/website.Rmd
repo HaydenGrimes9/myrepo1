@@ -14,9 +14,7 @@ use_git_config(user.name = "HaydenGrimes9", user.email = "haydengrimes9@gmail.co
 ```
 
 
-```{r}
-install.packages(c("distill", "rmarkdown", "postcards"))
-```
+
 ```{r}
 library(distill)
 library(rmarkdown)
@@ -43,8 +41,9 @@ library(distill)
 
 ```{r}
 library(postcards)
-```
+
 create_postcard(file = "Hayden.Rmd")
+
 ```
 
 
