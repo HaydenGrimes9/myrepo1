@@ -1,0 +1,86 @@
+---
+output:
+ 
+  html_document: default
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\begin{center}
+
+JOSHUA HAYDEN GRIMES
+
+jg2135@.msstate.edu | 601-421-8478 | 110 McRae Pointe Madison, MS 39110
+
+\end{center}
+
+---------
+
+# Education
+
+Mississippi State University
+Adkerson School of Accountancy
+
+**Bachelor of Accountancy**
+
+
+
+----
+
+# Work Experience
+
+**Ernst and Young Audit Intern | Memphis, Tennessee**           **| January 2021-March 2021**
+
+  •	Served as a member of the audit team for multiple clients, including a Fortune 100 company
+
+  •	Assisted with TOC’s, Walk Through’s, Valuation models, Market Rent Testing, Valuation Testing Data, and       OAR
+
+  •	Provided a creative solution that the team will continue to use going forward
+
+
+**Neel Schaffer Intern | Jackson, Mississippi | Summer 2018**
+
+•	Assisted civil engineers on several projects involving roadway design, road improvements, and solutions easing traffic congestion
+
+•	Handled cost-of-materials estimation, report and document tracking, on-site project visits, and invoice/agreement verification
+
+•	Lead a team of interns to update the DEQ’s dam failure safety procedures
+
+
+----
+
+# Leadership and Involvement
+
+**Beta Alpha Psi | 2019-Present**
+
+**Sigma Chi Fraternity | 2016-2020**
+
+•	Participated in many philanthropic events for the community
+
+**Annotator | 2018-2019**
+
+•	Voted in by peers in the fraternity to hold this position 
+
+•	Third in command for Sigma Chi.
+
+**Finance Committe | 2019-2020**
+
+•	Developed a plan that successfully brought Sigma Chi out of debt
+
+----
+
+# Community Service
+
+•	Volunteered weekly for the Salvation Army, 2017								
+
+•	Served on the clean-up crew after Bulldog Bash, 2017. 
+
+•	Created Christmas baskets for unprivileged children, 2018
+
+•	Raised money for the Huntsman cancer institute, 2018-2019
+
+•	Helped create multiple community service events, 2018-2019
+
