@@ -13,5 +13,7 @@ navbar:
       href: Rsquared.html
     - text: "Linear Regression"
       href: LinearRegression.html
+    - text: "Final Project"
+      href: FinalProjectTab.html
       
 output: distill::distill_article
