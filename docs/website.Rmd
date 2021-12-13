@@ -32,7 +32,7 @@ install.packages("distill", dependencies=TRUE)
 ```{r}
 packageVersion("distill")
 packageVersion("rmarkdown")
-packageVersion("postcard")
+packageVersion("postcards")
 ```
 ```{r}
 install.packages("postcards")
