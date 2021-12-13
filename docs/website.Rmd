@@ -47,13 +47,6 @@ library(postcards)
 create_postcard(file = "Hayden.Rmd")
 ```
 
-```{r}
-install.packages(cran)
-```
-```{r}
-install.packages("r package", repos = "http://cran.us.r-project.org")
-```
-```{r}
-install.packages(cran)
-```
+
+
 
