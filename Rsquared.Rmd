@@ -1,19 +1,98 @@
 ---
-title: "Rsquared"
-description: |
- This is where we discuss Rsquared
+title: "RSquared= no bueno"
+
+description: R-squared does not indicate how well a model fits. When the model is totally right, it may be set to any value.
 author:
-  - name: Hayden Grimes
-    
+  - name: Dr. Joshua Hunt
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
+```
+#### R-Squared has a range of values from 0 to 1. The model is doing a "good job" describing the variation in our data if the R-Squared is near 1. If the number is lower, our model can only account for a smaller portion of the data. When you run summary statistics, most applications will offer you R-Squared as an output because it is considered to be a good measurement. One might think of this as a good measurement, however sit is argued that it does not accurately measure the goodness of fit of a model.####
+
+
+---
+
+**In R, we typically get R-squared by calling the summary function on a model object. Here’s a quick example using simulated data:**
+
+```{r,echo=TRUE}
+# independent variable
+x <- 1:20 
+# for reproducibility
+set.seed(1) 
+# dependent variable; function of x with random error
+y <- 2 + 0.5*x + rnorm(20,0,3) 
+# simple linear regression
+mod <- lm(y~x)
+# request just the r-squared value
+summary(mod)$r.squared   
+```
+ 
+**One way to express R-squared is as the sum of squared fitted-value deviations divided by the sum of squared original-value deviations:**
+ 
+$$ R^{2} =  \frac{\sum (\hat{y} – \bar{\hat{y}})^{2}}{\sum (y – \bar{y})^{2}}$$
+ **We can calculate it directly using our model object like so:**
+ 
+```{r,echo=TRUE}
+ # extract fitted (or predicted) values from model
+f <- mod$fitted.values
+# sum of squared fitted-value deviations
+mss <- sum((f - mean(f))^2)
+# sum of squared original-value deviations
+tss <- sum((y - mean(y))^2)
+# r-squared
+mss/tss 
 ```
 
-Dr. Hunt Rsquared lecture notes
+
+$$σ2$$
+---
+
+**R-squared does not measure goodness of fit. It can be arbitrarily low when the model is completely correct. By makingσ2 large, we drive R-squared towards 0, even when every assumption of the simple linear regression model is correct in every particular.**
+
+**What is σ2? When we perform linear regression, we assume our model almost predicts our dependent variable. The difference between “almost” and “exact” is assumed to be a draw from a Normal distribution with mean 0 and some variance we call σ2.**
+
+**This statement is easy enough to demonstrate. The way we do it here is to create a function that (1) generates data meeting the assumptions of simple linear regression (independent observations, normally distributed errors with constant variance), (2) fits a simple linear model to the data, and (3) reports the R-squared. Notice the only parameter for sake of simplicity is sigma. We then “apply” this function to a series of increasing σ values and plot the results.** 
+
+
+```{r, echo=TRUE}
+r2.0 <- function(sig){
+  # our predictor
+  x <- seq(1,10,length.out = 100)   
+  # our response; a function of x plus some random noise
+  y <- 2 + 1.2*x + rnorm(100,0,sd = sig) 
+  # print the R-squared value
+  summary(lm(y ~ x))$r.squared          
+}
+
+ 
+
+sigmas <- seq(0.5,20,length.out = 20)
+list(sigmas)
+
+
+
+ # apply our function to a series of sigma values
+rout <- sapply(sigmas, r2.0) 
+list(rout)
+
+
+
+
+
+plot(rout ~ sigmas, type="b")
+```
+R-squared tanks hard with increasing sigma, even though the model is completely correct in every respect.
+
+**R-Squared changed drastically when the standard deviation for a model was increased. This demonstrates that is not always a reliable indicator of an excellent match..**
+
+
+
+
+
 
 
 
